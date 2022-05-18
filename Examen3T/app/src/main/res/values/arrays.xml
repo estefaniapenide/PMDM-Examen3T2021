@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="generos">
+        <item>Género:</item>
+        <item>Rock</item>
+        <item>Blues</item>
+        <item>Jazz</item>
+        <item>Varios</item>
+    </string-array>
+</resources>
