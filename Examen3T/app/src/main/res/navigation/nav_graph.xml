@@ -18,5 +18,10 @@
         android:id="@+id/ListaFragment"
         android:name="com.example.examen3t.ListaFragment"
         android:label="Examen3T"
-        tools:layout="@layout/fragment_lista"/>
+        tools:layout="@layout/fragment_lista">
+    <argument
+        android:name="genero"
+        app:argType="string"
+        android:defaultValue="z"/>
+    </fragment>
 </navigation>

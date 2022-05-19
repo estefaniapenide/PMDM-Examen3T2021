@@ -1,9 +1,7 @@
 package com.example.examen3t
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -43,15 +41,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-       menuInflater.inflate(R.menu.menu_main, menu)
+        when(navController.currentDestination?.id){
+            R.id.MainFragment -> menuInflater.inflate(R.menu.menu_main, menu)
+            R.id.ListaFragment -> menuInflater.inflate(R.menu.lista_menu,menu)
+        }
+
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_settings -> ventanaDialogo("Proyecto de examen del 3er trimestre","Información")
-            else -> super.onOptionsItemSelected(item)
+        when(navController.currentDestination?.id) {
+            R.id.MainFragment-> when (item.itemId) {
+                                    R.id.action_info -> ventanaDialogo("Proyecto de examen del 3er trimestre", "Información")
+                                    else -> super.onOptionsItemSelected(item) }
+            R.id.ListaFragment -> when (item.itemId) {
+                                    R.id.action_info -> ventanaDialogo("Botnes varios","Opciones")
+                                else -> super.onOptionsItemSelected(item) }
         }
         return true
     }
