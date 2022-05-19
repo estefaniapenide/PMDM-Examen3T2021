@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     lateinit var navHostFragment:NavHostFragment
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -31,10 +32,15 @@ class MainActivity : AppCompatActivity() {
         navHostFragment=supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         navController= navHostFragment.navController
 
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        /*appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)*/
+
+        //appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_graph))
+        //setupActionBarWithNavController(navController, appBarConfiguration)
+        //navView.setupWithNavController(navController)
 
     }
+
 
     private fun ventanaDialogo(mensaje:String, titulo:String) {
         AlertDialog.Builder(this).setMessage(mensaje).setTitle(titulo).create().show()
@@ -55,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                                     R.id.action_info -> ventanaDialogo("Proyecto de examen del 3er trimestre", "Información")
                                     else -> super.onOptionsItemSelected(item) }
             R.id.ListaFragment -> when (item.itemId) {
-                                    R.id.action_info -> ventanaDialogo("Botnes varios","Opciones")
+                                    R.id.action_ver -> ventanaDialogo("Botnes varios","Opciones")
                                 else -> super.onOptionsItemSelected(item) }
         }
         return true
