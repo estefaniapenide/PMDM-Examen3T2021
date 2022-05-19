@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         /*appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)*/
 
-        //appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_graph))
-        //setupActionBarWithNavController(navController, appBarConfiguration)
-        //navView.setupWithNavController(navController)
+       /* appBarConfiguration = AppBarConfiguration(setOf(R.id.MainFragment,R.id.ListaFragment))
+        setupActionBarWithNavController(navController, appBarConfiguration)*/
+        //R.id.nav_graph.setupWithNavController(navController)
 
     }
 
@@ -48,12 +48,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         when(navController.currentDestination?.id){
-            R.id.MainFragment -> menuInflater.inflate(R.menu.menu_main, menu)
-            R.id.ListaFragment -> menuInflater.inflate(R.menu.lista_menu,menu)
-        }
+           R.id.MainFragment ->
+        menuInflater.inflate(R.menu.menu_main, menu)
+            R.id.ListaFragment ->
+        menuInflater.inflate(R.menu.lista_menu,menu)
+       }
 
         return true
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(navController.currentDestination?.id) {
@@ -70,7 +73,6 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onSupportNavigateUp(): Boolean {
-        navController = navHostFragment.navController
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }

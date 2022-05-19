@@ -32,8 +32,8 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.spinner
+            .apply{setSelection(0,false)}
             .apply{adapter= ArrayAdapter.createFromResource(requireContext(),R.array.generos,R.layout.elemento)}
             .apply {
                 onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -44,6 +44,7 @@ class MainFragment : Fragment() {
                             3 -> findNavController().navigate(MainFragmentDirections.actionMainFragmentToListaFragment("jazz"))
                             4-> findNavController().navigate(MainFragmentDirections.actionMainFragmentToListaFragment("varios"))
                         }
+                        setSelection(0,false)
                     }
                     override fun onNothingSelected(parent: AdapterView<*>?) {}
                 }

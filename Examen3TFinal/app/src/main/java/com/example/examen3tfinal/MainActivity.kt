@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem):Boolean {
         when (item.itemId) {
+            //Hay que navegar desde el MainActivity a los fragments!! que si no puede que no esté en el main fragment para ir a l otro!!Cambiar esto!!
+            //IGUAL NO SE PUEDE HACER ESTO Y HAY QUE VER OTRA MANERA!!!!
             R.id.menu_simple -> navController.navigate(MainFragmentDirections.actionMainFragmentToSimpleFragment())
             R.id.menu_compuesta -> navController.navigate(MainFragmentDirections.actionMainFragmentToCompuestaFragment())
             else -> super.onOptionsItemSelected(item)

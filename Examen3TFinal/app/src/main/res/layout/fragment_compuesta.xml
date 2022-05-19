@@ -4,13 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#5C4539"
-    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".CompuestaFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+
+        <CheckBox
+            android:id="@+id/cbRock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:text="Rock" />
+
+        <CheckBox
+            android:id="@+id/cbBlues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:text="Blues" />
+
+        <CheckBox
+            android:id="@+id/cbJazz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:text="Jazz" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvfcompuesto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="3"
         android:text="BiblioMusica"
         android:textColor="@color/white"
         android:textSize="40dp"/>
