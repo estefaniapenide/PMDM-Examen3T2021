@@ -21,10 +21,18 @@
         android:id="@+id/SimpleFragment"
         android:name="com.example.examen3tfinal.SimpleFragment"
         android:label="Examen3T"
-        tools:layout="@layout/fragment_simple"/>
+        tools:layout="@layout/fragment_simple">
+        <action
+            android:id="@+id/action_SimpleFragment_to_compuestaFragment"
+            app:destination="@id/compuestaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/compuestaFragment"
         android:name="com.example.examen3tfinal.CompuestaFragment"
         android:label="fragment_compuesta"
-        tools:layout="@layout/fragment_compuesta" />
+        tools:layout="@layout/fragment_compuesta" >
+        <action
+            android:id="@+id/action_compuestaFragment_to_SimpleFragment"
+            app:destination="@id/SimpleFragment" />
+    </fragment>
 </navigation>
